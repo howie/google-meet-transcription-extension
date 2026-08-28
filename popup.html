@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meet Transcript Saver</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header class="app-header">
+        <div class="logo" aria-hidden="true">CC</div>
+        <div>
+          <h1>Meet Transcript Saver</h1>
+          <p>字幕只保存在這台電腦</p>
+        </div>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div class="status-row">
+          <span id="statusDot" class="status-dot"></span>
+          <strong id="statusText">正在確認狀態…</strong>
+        </div>
+        <p id="statusHint">請稍候</p>
+        <dl>
+          <div>
+            <dt>已擷取</dt>
+            <dd><span id="segmentCount">0</span> 段</dd>
+          </div>
+          <div>
+            <dt>儲存位置</dt>
+            <dd>Chrome 本機</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="capture-actions">
+        <button id="startButton" class="primary" type="button">開始擷取</button>
+        <button id="stopButton" type="button" disabled>停止</button>
+      </div>
+
+      <p id="actionMessage" class="message" role="status"></p>
+
+      <section class="export-card">
+        <label for="sessionSelect">已保存的會議</label>
+        <select id="sessionSelect" disabled>
+          <option>尚無逐字稿</option>
+        </select>
+        <div class="export-actions">
+          <button id="markdownButton" type="button" disabled>匯出 Markdown</button>
+          <button id="jsonButton" type="button" disabled>匯出 JSON</button>
+        </div>
+      </section>
+
+      <p class="privacy-note">
+        Extension 只讀取 Google Meet 畫面上已顯示的即時字幕，不會錄音或上傳內容。
+      </p>
+    </main>
+
+    <script src="src/transcript-core.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

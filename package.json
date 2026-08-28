@@ -1,0 +1,14 @@
+{
+  "name": "google-meet-transcription-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Locally save visible Google Meet live captions and export Markdown or JSON.",
+  "scripts": {
+    "check": "npm run test && npm run check:syntax",
+    "check:syntax": "node --check src/transcript-core.js && node --check src/content.js && node --check popup.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
